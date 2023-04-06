@@ -8,7 +8,7 @@ import { message } from "antd";
 // const SERVER_URL = "http://localhost:5000/";
 
 // export const socket = io(URL);
-export const socket = io("https://interviewapp-8e28tnswk-rishuraj2401.vercel.app/");
+export const socket = io("https://satin-near-hornet.glitch.me/");
 
 const VideoState = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
