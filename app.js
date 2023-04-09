@@ -16,9 +16,9 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3001;
 
-app.get("/", (req, res) => {
-  res.send("Running");
-});
+// app.get("/", (req, res) => {
+//   res.send("Running");
+// });
 
 io.on("connection", (socket) => {
   socket.emit("me", socket.id);
@@ -77,15 +77,15 @@ io.on("connection", (socket) => {
 // });
 
 
-// if ("production" == "production") {
+if ("production" == "production") {
    
  
-//   app.use(express.static(path.resolve(__dirname, "./client/build")));
-//   app.get("*", (req, res) => {
-//       res.sendFile(path.resolve(__dirname, "./client/build", "index.html"))
-//   })
-// }
-// app.use(express.urlencoded({ extended: false }));
+  app.use(express.static(path.resolve(__dirname, "./client/build")));
+  app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, "./client/build", "index.html"))
+  })
+}
+app.use(express.urlencoded({ extended: false }));
 server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 // "scripts": {
 //   "test": "echo \"Error: no test specified\" && exit 1",
