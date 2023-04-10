@@ -24,7 +24,7 @@ import { socket } from "../../context/VideoState";
 
 const Options = () => {
   const [idToCall, setIdToCall] = useState("");
-
+  const [callId, setCallId] = useState("Enter code to call");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const Audio = useRef();
   const {
@@ -104,7 +104,7 @@ const Options = () => {
   return (
     <div className={classes.options}>
       <div style={{ marginBottom: "0.5rem" }}>
-        <h2>Account Info</h2>
+        <h2>Your Name</h2>
         <Input
           size="large"
           placeholder="Your name"
@@ -127,16 +127,17 @@ const Options = () => {
               className={classes.btn}
               tabIndex="0"
               onClick={(event)=>{
-                message.success("Code copied successfully!");}}
+                message.success("Code copied successfully!");
+                setCallId(me);}}
             
             >
-              Copy code
+              Copy Room code
             </Button>
           </CopyToClipboard>
 
           <div className={classes.share_social}>
             <WhatsappShareButton
-              url={`https://video-chat-mihir.vercel.app/`}
+              url={`https://interviewapp-o3fbihuwj-rishuraj2401.vercel.app/`}
               title={`Join this meeting with the given code "${me}"\n`}
               separator="Link: "
               className={classes.share_icon}
@@ -144,14 +145,14 @@ const Options = () => {
               <WhatsappIcon size={26} round />
             </WhatsappShareButton>
             <FacebookShareButton
-              url={`https://video-chat-mihir.vercel.app/`}
+              url={`https://interviewapp-o3fbihuwj-rishuraj2401.vercel.app/`}
               title={`Join this meeting with the given code "${me}"\n`}
               className={classes.share_icon}
             >
               <FacebookIcon size={26} round />
             </FacebookShareButton>
             <TwitterShareButton
-              url={`https://video-chat-mihir.vercel.app/`}
+              url={`https://interviewapp-o3fbihuwj-rishuraj2401.vercel.app/`}
               title={`Join this meeting with the given code  "${me}"\n`}
               className={classes.share_icon}
             >
@@ -161,19 +162,14 @@ const Options = () => {
         </div>
       </div>
       <div style={{ marginBottom: "0.5rem" }}>
-        <h2>Make a call</h2>
+        <h2>Enter Room Code</h2>
 
         <Input
-          placeholder="Enter code to call"
+          placeholder={callId}
           size="large"
           className={classes.inputgroup}
           value={idToCall}
           onChange={(e) => {setIdToCall(e.target.value) } }
-          // // onChange={(event) => {
-          // //   setRoom(event.target.value);
-          // // }}
-          // onChange={(event)=>{callset(event)}}
-          // onKeyUp={(event)=>{callset(event)}}
           style={{ marginRight: "0.5rem", marginBottom: "0.5rem" }}
           prefix={<UserOutlined className="site-form-item-icon" />}
           suffix={
@@ -191,7 +187,7 @@ const Options = () => {
             tabIndex="0"
           >
             <img src={Hang} alt="hang up" style={{ height: "15px" }} />
-            &nbsp; Hang up
+            &nbsp; Leave
           </Button>
         ) : (
           <Button
@@ -209,7 +205,7 @@ const Options = () => {
             className={classes.btn}
             tabIndex="0"
           >
-            Call
+            Join
           </Button>
          )} 
       </div>
@@ -218,21 +214,21 @@ const Options = () => {
         <>
           <audio src={Teams} loop ref={Audio} />
           <Modal
-            title="Incoming Call"
+            title="Room Invite"
             visible={isModalVisible}
             onOk={() => showModal(false)}
             onCancel={handleCancel}
             footer={null}
           >
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <div style={{ display: "flex", justifyContent: "space-around" , backgroundColor: "blue" ,}}>
               <h1>
-                {call.name} is calling you:{" "}
-                <img
+                {call.name} is inviting to join Room:{" "}
+                {/* <img
                   src={Phone}
                   alt="phone ringing"
                   className={classes.phone}
                   style={{ display: "inline-block" }}
-                />
+                /> */}
               </h1>
             </div>
             <div className={classes.btnDiv}>
@@ -247,7 +243,7 @@ const Options = () => {
                 }}
                 tabIndex="0"
               >
-                Answer
+                Accept Invite
               </Button>
               <Button
                 variant="contained"
@@ -259,7 +255,7 @@ const Options = () => {
                 }}
                 tabIndex="0"
               >
-                Decline
+                Decline Invite
               </Button>
             </div>
           </Modal>

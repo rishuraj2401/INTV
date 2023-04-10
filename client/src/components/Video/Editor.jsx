@@ -4,10 +4,12 @@ import VideoContext from "../../context/VideoContext";
 import "./Video.css";
 import { io } from "socket.io-client";
 import { socket } from "../../context/VideoState";
-import Codemirror from 'codemirror';
+//import Codemirror from 'codemirror';
 import CodeMirror from '@uiw/react-codemirror';
+import { darcula, darculaInit } from '@uiw/codemirror-theme-darcula';
+import { javascript } from '@codemirror/lang-javascript';
 // import 'codemirror/lib/codemirror.css';
-import 'codemirror/mode/javascript/javascript';
+//import 'codemirror/mode/javascript/javascript';
 // import 'codemirror/addon/edit/closetag';
 // import 'codemirror/addon/edit/closebrackets';
 // import 'codemirror/lib/codemirror.css'
@@ -19,8 +21,12 @@ import 'codemirror/mode/javascript/javascript';
 // import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
 // import 'codemirror/theme/material.css'
 // import 'codemirror/mode/xml/xml'
-import 'codemirror/theme/dracula.css';
+//import 'codemirror/theme/dracula.css';
 //import { fromTextArea } from "codemirror";
+// import 'codemirror/lib/codemirror.css';
+// import 'codemirror/theme/material.css';
+// import { Controlled as CodeMirror } from 'react-codemirror2';
+
 
 const Editor = () => {
   const {
@@ -118,7 +124,6 @@ function handleChange(event) {
   clearTimeout(timeoutRef1.current);
   timeoutRef1.current = setTimeout(() => {
     if(typeof message==='string'){
-console.log('rishu');
 sendMessage()
 
     }
@@ -134,20 +139,28 @@ useEffect(() => {
  return(
       <div>
         <h1> Message:</h1>
-        <textarea id="code">this</textarea>;
-       
         <CodeMirror id="cod"
           value={messageReceived}
-          ref={codeM}
-          options = {{
-            theme: "dracula",
-            keymap: "sublime",
-            mode: "javascript",
-          }}
+          // ref={codeM}
+            // value={}
+          // options={{
+          //   mode: 'javascript',
+          //   theme: 'material',
+          //   lineNumbers: true,
+          // }}
+          theme={darcula}
+          extensions={[javascript({ jsx: true })]}
            onChange={(value)=>{ onChanges(value)}}
            onKeyUp={(value1)=>{handleChange(value1)}}
        
         />
+        {/* <CodeMirror
+      // value={this.state.code}
+      onBeforeChange={(editor, data, value) => {
+        this.setState({ code: value });
+      }}
+      
+    /> */}
       </div>
   );
 

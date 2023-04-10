@@ -104,7 +104,7 @@ const Video = () => {
 //  const [final, setFinal]=useState(message+messageReceived)
   return (
     <div className="grid">
-      {<Editor />}
+
     
       {/* <Editor
           language="xml"
@@ -310,6 +310,7 @@ const Video = () => {
           </div>
         </div>
       )}
+      {<Editor />}
     </div>
   );
 };
