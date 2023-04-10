@@ -138,7 +138,7 @@ useEffect(() => {
 }, [socket]);
  return(
       <div>
-        <h1> Message:</h1>
+        {/* <h1> Message:</h1> */}
         <CodeMirror id="cod"
           value={messageReceived}
           // ref={codeM}
@@ -149,6 +149,7 @@ useEffect(() => {
           //   lineNumbers: true,
           // }}
           theme={darcula}
+          style={{width:"100vh"}}
           extensions={[javascript({ jsx: true })]}
            onChange={(value)=>{ onChanges(value)}}
            onKeyUp={(value1)=>{handleChange(value1)}}

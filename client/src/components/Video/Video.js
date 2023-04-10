@@ -96,50 +96,10 @@ const Video = () => {
       });
     }
   }, [msgRcv]);
-//   const send=(e)=>{
-//     setMessage(e);
-//     sendMessage()
-//     // setFinal(message+messageReceived)
-//   }
-//  const [final, setFinal]=useState(message+messageReceived)
+
   return (
     <div className="grid">
-
-    
-      {/* <Editor
-          language="xml"
-          displayName="HTML"
-          value={messageReceived}
-          onChange={(e)=>{send(e)}}
-          onKeyUp={(e)=>{send(e)}}
-        /> */}
-     {/* {messageReceived} */}
-      <div>
-             {/* <input
-        placeholder="Message..."
-        onChange={(event)=>send(event)} onKeyUp={(event)=>send(event)}
-      /> */}
-      {/* <button onClick={sendMessage}> Send Message</button> */}
-      {/* <h1> Message:</h1>
-      {msgRcv} */}
-
-      {/* {chat.map((msg) => (
-                    <div
-                      className={msg.type === "sent" ? "msg_sent" : "msg_rcv"}
-                    >
-                      {msg.msg}
-        </div>))}
-        <Search
-                placeholder="your message"
-                allowClear
-                className="input_msg"
-                enterButton="Send 🚀"
-                onChange={(e) => send(e)}
-                value={sendMsg}
-                size="large"
-                onSearch={onSearch}
-              /> */}
-        </div>
+    <div className="video-grid">
       {stream ? (
         <div
           style={{ textAlign: "center" }}
@@ -147,7 +107,7 @@ const Video = () => {
           id={callAccepted && !callEnded ? "video1" : "video3"}
         >
           <div style={{ height: "2rem" }}>
-            <h3>{myVdoStatus && name}</h3>
+            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"2vh"}}>{myVdoStatus && name}</h3>
           </div>
           <div className="video-avatar-container">
             <video
@@ -165,7 +125,7 @@ const Video = () => {
             <Avatar
               style={{
                 backgroundColor: "#116",
-                position: "absolute",
+                position: "relative",
                 opacity: `${myVdoStatus ? "-1" : "2"}`,
               }}
               size={98}
@@ -266,9 +226,10 @@ const Video = () => {
 
       {callAccepted && !callEnded && userVideo && (
         <div className="card2" style={{ textAlign: "center" }} id="video2">
-          <div style={{ height: "2rem" }}>
-            <h3>{userVdoStatus && (call.name || userName)}</h3>
+          <div>
+            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"1vh"}}>{userVdoStatus && (call.name || userName)}</h3>
           </div>
+           
 
           <div className="video-avatar-container">
             <video
@@ -310,6 +271,7 @@ const Video = () => {
           </div>
         </div>
       )}
+    </div>
       {<Editor />}
     </div>
   );
