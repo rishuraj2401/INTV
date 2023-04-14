@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import VideoContext from "../../context/VideoContext";
 import "./Video.css";
+import Options from "../options/Options";
 import { Card, Modal, Button, Input, notification, Avatar, message } from "antd";
 import Man from "../../assests/man.svg";
 import VideoIcon from "../../assests/video.svg";
@@ -100,6 +101,10 @@ const Video = () => {
   return (
     <div className="grid">
     <div className="video-grid">
+      <div className="name">
+    <h1 style={{textAlign:"center"}}>INTV</h1>
+      </div>
+    <div className="video-flex">
       {stream ? (
         <div
           style={{ textAlign: "center" }}
@@ -107,7 +112,10 @@ const Video = () => {
           id={callAccepted && !callEnded ? "video1" : "video3"}
         >
           <div style={{ height: "2rem" }}>
-            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"2vh"}}>{myVdoStatus && name}</h3>
+            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"2vh"}}>
+              {/* {myVdoStatus && name} */}
+              You
+              </h3>
           </div>
           <div className="video-avatar-container">
             <video
@@ -190,7 +198,7 @@ const Video = () => {
                 placeholder="your message"
                 allowClear
                 className="input_msg"
-                enterButton="Send 🚀"
+                enterButton="Send "
                 onChange={(e) => setSendMsg(e.target.value)}
                 value={sendMsg}
                 size="large"
@@ -227,7 +235,7 @@ const Video = () => {
       {callAccepted && !callEnded && userVideo && (
         <div className="card2" style={{ textAlign: "center" }} id="video2">
           <div>
-            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"1vh"}}>{userVdoStatus && (call.name || userName)}</h3>
+            <h3 style={{zIndex:"5" ,position:"absolute" ,paddingLeft:"2vh"}}>{userVdoStatus && (call.name || userName)}</h3>
           </div>
            
 
@@ -272,7 +280,12 @@ const Video = () => {
         </div>
       )}
     </div>
+    </div>
+    <div>
+
+    <Options />
       {<Editor />}
+    </div>
     </div>
   );
 };

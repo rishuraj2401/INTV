@@ -1,16 +1,16 @@
-.options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  column-gap: 2rem;
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 600px;
-  background: #fefefe;
-  padding: 0.5rem 1rem;
-  border-top: 5px solid dodgerblue;
-  border-radius: 0.25rem;
+.options{  
+  width: 100%;
+  padding: 0.25rem;
+  background-color: #404258;
+  /* border-radius: 0.25rem; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-
+.modal{
+  background-color: #000;
+}
 @media (max-width: 600px) {
   .options {
     display: flex;
@@ -19,34 +19,46 @@
   }
 }
 .options > * {
-  width: 100%;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
 }
 .options .btn {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  /* margin-top: 0.5rem; */
+  /* margin-bottom: 0.5rem; */
   transition: none;
+  background-color: #6B728E;
+  border: 0px solid black;
+  border-radius: 1rem;
 }
 .options .btn:hover {
-  opacity: 0.9;
+  background-color: #50577A;
 }
 .options .btn:focus {
+  background-color: #50577A;
   outline: 2px solid #000;
 }
 .inputgroup {
   font-family: Gilroy-light;
   font-weight: bold;
   letter-spacing: 0.09rem;
+  
 }
 
 .inputgroup {
+  /* background-color: #6B728E;  */
+  margin: 10px;
   width: 100%;
-  max-width: 360px;
+  max-width: 200px;
+  /* margin: 1vh; */
+  height: 35px;
 }
 
 .btnDiv {
   display: flex;
-  margin-top: 1rem;
-  flex-direction: row;
+  /* margin-top: 1rem; */
+  /* flex-direction: row; */
   justify-content: space-around;
 }
 
@@ -58,15 +70,18 @@
   background-color: #29bb89;
   color: #1e6f5c;
   font-weight: bold;
+  border-radius: 1rem;
 }
 
 .btnDiv .decline {
   background-color: rgb(250, 30, 14, 0.75);
+  border-radius: 1rem;
   color: #8c0000;
   font-weight: bold;
 }
 .hang {
   background-color: rgb(250, 30, 14, 0.75) !important;
+  border-radius: 1rem;
   color: #8c0000 !important;
   font-weight: bold;
   margin-top: 0.5rem;
@@ -76,7 +91,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
 }
 .share_social {
   display: flex;
