@@ -149,8 +149,8 @@ useEffect(() => {
           //   lineNumbers: true,
           // }}
           theme={darcula}
-          height="100%"
-          width="100vh"
+          height="100px"
+          width="100px"
           style={{width:"100vh"}}
           extensions={[javascript({ jsx: true })]}
            onChange={(value)=>{ onChanges(value)}}
