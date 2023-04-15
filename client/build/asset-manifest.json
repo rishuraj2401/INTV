@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af26a2a4.chunk.css",
+    "main.js": "/static/js/main.c5b19c34.chunk.js",
+    "main.js.map": "/static/js/main.c5b19c34.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9a5e93f0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9a5e93f0.js.map",
+    "static/css/2.f9eebd00.chunk.css": "/static/css/2.f9eebd00.chunk.css",
+    "static/js/2.e24aeb73.chunk.js": "/static/js/2.e24aeb73.chunk.js",
+    "static/js/2.e24aeb73.chunk.js.map": "/static/js/2.e24aeb73.chunk.js.map",
+    "static/js/3.c49388bc.chunk.js": "/static/js/3.c49388bc.chunk.js",
+    "static/js/3.c49388bc.chunk.js.map": "/static/js/3.c49388bc.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.f9eebd00.chunk.css.map": "/static/css/2.f9eebd00.chunk.css.map",
+    "static/css/main.af26a2a4.chunk.css.map": "/static/css/main.af26a2a4.chunk.css.map",
+    "static/js/2.e24aeb73.chunk.js.LICENSE.txt": "/static/js/2.e24aeb73.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/gilroy.0094146a.otf",
+    "static/media/codeLogo1.5a8b2c7d.png": "/static/media/codeLogo1.5a8b2c7d.png",
+    "static/media/codeLogo2.ed914d96.png": "/static/media/codeLogo2.ed914d96.png",
+    "static/media/codeLogo3.f576d553.png": "/static/media/codeLogo3.f576d553.png",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/hang.a09ef7b4.svg": "/static/media/hang.a09ef7b4.svg",
+    "static/media/man.2e482fe5.svg": "/static/media/man.2e482fe5.svg",
+    "static/media/msg.590bd963.svg": "/static/media/msg.590bd963.svg",
+    "static/media/msg_illus.a7fd59ce.svg": "/static/media/msg_illus.a7fd59ce.svg",
+    "static/media/phone.b2c1ae6b.gif": "/static/media/phone.b2c1ae6b.gif",
+    "static/media/share_screen.2998de9b.svg": "/static/media/share_screen.2998de9b.svg",
+    "static/media/teams.23d1d865.mp3": "/static/media/teams.23d1d865.mp3",
+    "static/media/video-off.81281c31.svg": "/static/media/video-off.81281c31.svg",
+    "static/media/video.e038b670.svg": "/static/media/video.e038b670.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9a5e93f0.js",
+    "static/css/2.f9eebd00.chunk.css",
+    "static/js/2.e24aeb73.chunk.js",
+    "static/css/main.af26a2a4.chunk.css",
+    "static/js/main.c5b19c34.chunk.js"
+  ]
+}
