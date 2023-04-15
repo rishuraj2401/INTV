@@ -104,7 +104,9 @@ const Options = () => {
   return (
     <>
     <div className={classes.options}>
-      <div className={classes.name}>
+      <div className={classes.name} style={{display:"inline-flex" ,textAlign:"center" ,justifyContent:"space-around"}}>
+      <div>
+
       <p2 >Your Name</p2>
         <Input
           size="large"
@@ -118,10 +120,12 @@ const Options = () => {
             localStorage.setItem("name", e.target.value);
           }}
           className={classes.inputgroup}
-        />
+          />
+        </div>
       </div>
-      <div className={classes.copyCode}>
+      <div className={classes.copyCode} style={{display:"inline-flex" ,textAlign:"center" ,justifyContent:"space-around"}}>
       <div>
+        
         <CopyToClipboard text={me}>
           <Button
             type="primary"
@@ -165,7 +169,7 @@ const Options = () => {
       </div>
       </div>
       
-      <div className={classes.roomCode}>
+      <div className={classes.roomCode} style={{display:"inline-flex" ,textAlign:"center" ,justifyContent:"space-evenly"}}>
       <p2>Room Code</p2>
       <Input
         placeholder={callId}

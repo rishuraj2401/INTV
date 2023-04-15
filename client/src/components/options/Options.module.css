@@ -1,5 +1,6 @@
 .options{  
-  width: 100%;
+  /* width: calc(100vw -300px); */
+  background-size: cover;
   padding: 0.25rem;
   background-color: #404258;
   /* border-radius: 0.25rem; */
@@ -15,7 +16,7 @@
   .options {
     display: flex;
     flex-direction: column;
-    max-width: 480px;
+    /* max-width: 480px; */
   }
 }
 .options > * {
@@ -30,7 +31,7 @@
   transition: none;
   background-color: #6B728E;
   border: 0px solid black;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
 }
 .options .btn:hover {
   background-color: #50577A;

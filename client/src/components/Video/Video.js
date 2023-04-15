@@ -15,6 +15,12 @@ import { UserOutlined, MessageOutlined } from "@ant-design/icons";
 import { socket } from "../../context/VideoState";
 import Editor from "./Editor";
 // import Editor1 from "./editor1";
+import codeLogo3 from "../../assests/codeLogo3.png";
+import codeLogo1 from "../../assests/codeLogo1.png";
+import codeLogo2 from "../../assests/codeLogo2.png"
+
+
+
 
 // const socket = io()
 const { Search } = Input;
@@ -99,12 +105,21 @@ const Video = () => {
   }, [msgRcv]);
 
   return (
+  
+
     <div className="grid">
+
     <div className="video-grid">
-      <div className="name">
-    <h1 style={{textAlign:"center"}}>INTV</h1>
-      </div>
+   
+     
     <div className="video-flex">
+    <div className="name" style={{textAlign:"center" ,height:"90px",width:"300px" ,alignItems:"center"}}>
+    {/* <h1 style={{textAlign:"center"}}>CodeMeet</h1> */}
+    
+    <img src={codeLogo2} alt="logo" 
+    style={{height:"100%" ,width:"50%" ,padding:"10px"}}
+    />
+      </div>
       {stream ? (
         <div
           style={{ textAlign: "center" }}
