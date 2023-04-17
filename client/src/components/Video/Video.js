@@ -129,8 +129,8 @@ const Video = () => {
           className="card"
           id={callAccepted && !callEnded ? "video1" : "video3"}
         >
-          <div style={{ height: "2rem" }}>
-            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"2vh"}}>
+          <div >
+            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"1vh"}}>
               {/* {myVdoStatus && name} */}
               You
               </h3>
@@ -151,7 +151,7 @@ const Video = () => {
             <Avatar
               style={{
                 backgroundColor: "#116",
-                position: "relative",
+                position: "absolute",
                 opacity: `${myVdoStatus ? "-1" : "2"}`,
               }}
               size={98}
