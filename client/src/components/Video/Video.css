@@ -7,6 +7,12 @@
   row-gap: 1rem;
   height: 100%;
 }
+/* .flexx{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
 .video-grid{
   display: grid;
   /* grid-template-rows: 5vw ; */
@@ -17,8 +23,10 @@
 .name{
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   /* background-color ; */
+  margin-bottom: 10px;
+  margin-top: 10px;
 
 }
 .name h1{
@@ -223,6 +231,7 @@
   }
   .video-grid{
     max-width: 300px;
+    /* width: 100%; */
     text-align: center;
     display:inline-flex ;
     
