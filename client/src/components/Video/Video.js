@@ -18,6 +18,7 @@ import Editor from "./Editor";
 import codeLogo3 from "../../assests/codeLogo3.png";
 import codeLogo1 from "../../assests/codeLogo1.png";
 import codeLogo2 from "../../assests/codeLogo2.png"
+import codeLogo4 from "../../assests/codeLogo4.png"
 
 
 
@@ -116,18 +117,20 @@ const Video = () => {
     <div className="name" style={{textAlign:"center" ,height:"90px",width:"300px" ,alignItems:"center"}}>
     {/* <h1 style={{textAlign:"center"}}>CodeMeet</h1> */}
     
-    <img src={codeLogo2} alt="logo" 
-    style={{height:"100%" ,width:"50%" ,padding:"10px"}}
+    <img src={codeLogo4} alt="logo" 
+    style={{height:"90px", objectFit:"cover"}}
     />
       </div>
+    <div className="flexx">
+
       {stream ? (
         <div
           style={{ textAlign: "center" }}
           className="card"
           id={callAccepted && !callEnded ? "video1" : "video3"}
         >
-          <div style={{ position:"relative"}}>
-            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"1vh"}}>
+          <div style={{ height: "2rem" }}>
+            <h3 style={{zIndex:"5" ,position:"absolute" ,padding:"2vh"}}>
               {/* {myVdoStatus && name} */}
               You
               </h3>
@@ -148,7 +151,7 @@ const Video = () => {
             <Avatar
               style={{
                 backgroundColor: "#116",
-                position: "absolute",
+                position: "relative",
                 opacity: `${myVdoStatus ? "-1" : "2"}`,
               }}
               size={98}
@@ -181,7 +184,7 @@ const Video = () => {
                   setIsModalVisible(!isModalVisible);
                 }}
                 tabIndex="0"
-              >
+                >
                 <img src={Msg} alt="chat icon" />
               </div>
             )}
@@ -197,7 +200,7 @@ const Video = () => {
                 <div className="msg_flex">
                   {chat.map((msg) => (
                     <div
-                      className={msg.type === "sent" ? "msg_sent" : "msg_rcv"}
+                    className={msg.type === "sent" ? "msg_sent" : "msg_rcv"}
                     >
                       {msg.msg}
                     </div>
@@ -218,13 +221,13 @@ const Video = () => {
                 value={sendMsg}
                 size="large"
                 onSearch={onSearch}
-              />
+                />
             </Modal>
             {callAccepted && !callEnded && (
               <div
-                className="icons"
-                onClick={() => handleScreenSharing()} 
-                tabIndex="0"
+              className="icons"
+              onClick={() => handleScreenSharing()} 
+              tabIndex="0"
               >
                 <img src={ScreenShare} alt="share screen" />
               </div>
@@ -264,7 +267,7 @@ const Video = () => {
               style={{
                 opacity: `${userVdoStatus ? "1" : "0"}`,
               }}
-            />
+              />
 
             <Avatar
               style={{
@@ -274,7 +277,7 @@ const Video = () => {
               }}
               size={98}
               icon={!(userName || call.name) && <UserOutlined />}
-            >
+              >
               {userName || call.name}
             </Avatar>
             {!userMicStatus && (
@@ -289,11 +292,12 @@ const Video = () => {
                 className="fad fa-volume-mute fa-2x"
                 aria-hidden="true"
                 aria-label="microphone muted"
-              ></i>
-            )}
+                ></i>
+                )}
           </div>
         </div>
       )}
+    </div>
     </div>
     </div>
     <div>
