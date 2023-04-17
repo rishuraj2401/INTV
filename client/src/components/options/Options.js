@@ -123,7 +123,55 @@ const Options = () => {
           />
         </div>
       </div>
-      <div className={classes.copyCode} style={{display:"inline-flex" ,textAlign:"center" ,justifyContent:"space-around"}}>
+      
+      
+      <div className={classes.roomCode} style={{display:"inline-flex" ,textAlign:"center" ,justifyContent:"space-evenly"}}>
+      <div>
+
+      <p2>Room Code</p2>
+      <Input
+        placeholder={callId}
+        size="large"
+        className={classes.inputgroup}
+        value={idToCall}
+        onChange={(e) => {setIdToCall(e.target.value) } }
+        style={{ marginRight: "0.5rem", marginBottom: "0.5rem" }}
+        prefix={<UserOutlined className="site-form-item-icon" />}
+        suffix={
+          <Tooltip title="Enter code of the other user">
+            <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
+          </Tooltip>
+  }       
+/>
+  </div>
+     
+     </div>
+     <div className={classes.copyCode} style={{display:"inline-flex" ,textAlign:"center" ,justifyContent:"space-around",flexWrap:"wrap"}}>
+     {callAccepted && !callEnded ? (
+         
+         <Button
+           variant="contained"
+           onClick={leaveCall}
+           className={classes.hang}
+           tabIndex="0"
+         >
+           <img src={Hang} alt="hang up" style={{ height: "15px" }} />
+           &nbsp; Leave
+         </Button>
+       ) : (
+         <Button
+           type="primary"
+           icon={<PhoneOutlined />}
+           onClick={() => {
+             if (name.length) {callUser(idToCall) ;}
+             else message.error("Please enter your name to call!");
+           }}
+           className={classes.btn}
+           tabIndex="0"
+         >
+           Join
+         </Button>
+        )} 
       <div>
         
         <CopyToClipboard text={me}>
@@ -168,50 +216,6 @@ const Options = () => {
          </div>
       </div>
       </div>
-      
-      <div className={classes.roomCode} style={{display:"inline-flex" ,textAlign:"center" ,justifyContent:"space-evenly"}}>
-      <p2>Room Code</p2>
-      <Input
-        placeholder={callId}
-        size="large"
-        className={classes.inputgroup}
-        value={idToCall}
-        onChange={(e) => {setIdToCall(e.target.value) } }
-        style={{ marginRight: "0.5rem", marginBottom: "0.5rem" }}
-        prefix={<UserOutlined className="site-form-item-icon" />}
-        suffix={
-          <Tooltip title="Enter code of the other user">
-            <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
-          </Tooltip>
-  }       
-/>
-      {callAccepted && !callEnded ? (
-         
-         <Button
-           variant="contained"
-           onClick={leaveCall}
-           className={classes.hang}
-           tabIndex="0"
-         >
-           <img src={Hang} alt="hang up" style={{ height: "15px" }} />
-           &nbsp; Leave
-         </Button>
-       ) : (
-         <Button
-           type="primary"
-           icon={<PhoneOutlined />}
-           onClick={() => {
-             if (name.length) {callUser(idToCall) ;}
-             else message.error("Please enter your name to call!");
-           }}
-           className={classes.btn}
-           tabIndex="0"
-         >
-           Join
-         </Button>
-        )} 
-     </div>
-      
     </div>
     <div>
 
